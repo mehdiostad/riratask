@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Yekan Bakh";
+    src: url(/fonts/YEKAN\ BAKH\ FA-EN\ 05\ MEDIUM.TTF);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+  }
+  * {
+    font-family: "Yekan Bakh";
+  }
