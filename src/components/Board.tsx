@@ -1,7 +1,7 @@
 "use client";
 import PlusIcon from "@/icons/PlusIcon";
 import { Column, Id, Task } from "@/types";
-import React, { useEffect, useMemo, useState } from "react";
+import React, {  useMemo, useState } from "react";
 import ColumnContainer from "./ColumnContainer";
 import {
   DndContext,
@@ -23,7 +23,6 @@ const Board = () => {
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
-  const [taskDeadLine, setTaskDeadLine] = useState("");
   const createNewColumn = () => {
     const columnToAdd: Column = {
       id: generateId(),
