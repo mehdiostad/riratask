@@ -1,7 +1,7 @@
 "use client";
 import PlusIcon from "@/icons/PlusIcon";
 import { Column, Id, Task } from "@/types";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ColumnContainer from "./ColumnContainer";
 import {
   DndContext,
@@ -23,6 +23,7 @@ const Board = () => {
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
+  const [taskDeadLine, setTaskDeadLine] = useState("");
   const createNewColumn = () => {
     const columnToAdd: Column = {
       id: generateId(),
@@ -55,6 +56,7 @@ const Board = () => {
       columnId,
       content: `تسک ${tasks.length + 1}`,
       id: generateId(),
+      deadline: "",
     };
     setTasks([...tasks, newTask]);
   };
@@ -66,6 +68,13 @@ const Board = () => {
     const newTasks = tasks.map((task) => {
       if (task.id !== id) return task;
       return { ...task, content };
+    });
+    setTasks(newTasks);
+  };
+  const handleDeadLine = (id: Id, deadline: string) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id !== id) return task;
+      return { ...task, deadline };
     });
     setTasks(newTasks);
   };
@@ -136,6 +145,7 @@ const Board = () => {
       });
     }
   };
+ 
   return (
     <div className="min-h-screen m-auto flex w-full items-center overflow-x-auto overflow-y-hidden px-[40px]">
       <DndContext
@@ -156,6 +166,7 @@ const Board = () => {
                   tasks={tasks.filter((task) => task.columnId === col.id)}
                   deleteTask={deleteTask}
                   updateTask={updateTask}
+                  handleDeadLine={handleDeadLine}
                 />
               </div>
             ))}
@@ -179,6 +190,7 @@ const Board = () => {
                 deleteColumn={deleteColumn}
                 updateColumn={updateColumn}
                 createTask={createTask}
+                handleDeadLine={handleDeadLine}
                 tasks={tasks.filter(
                   (task) => task.columnId === activeColumn.id
                 )}
@@ -191,10 +203,11 @@ const Board = () => {
                 task={activeTask}
                 deleteTask={deleteTask}
                 updateTask={updateTask}
+                handleDeadLine={handleDeadLine}
               />
             )}
           </DragOverlay>,
-        document.body
+          document.body
         )}
       </DndContext>
     </div>
