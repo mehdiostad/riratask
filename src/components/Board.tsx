@@ -1,7 +1,7 @@
 "use client";
 import PlusIcon from "@/icons/PlusIcon";
 import { Column, Id, Task } from "@/types";
-import React, {  useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import ColumnContainer from "./ColumnContainer";
 import {
   DndContext,
