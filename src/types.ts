@@ -6,8 +6,7 @@ export type Task = {
   id: Id;
   columnId: Id;
   content: string;
-  deadline:string
-  overdue?:boolean
+  deadline: string;
 };
 
 export type Id = string | number;

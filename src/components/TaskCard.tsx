@@ -2,7 +2,7 @@
 import DeleteIcon from "@/icons/DeleteIcon";
 import { Id, Task } from "@/types";
 import { useSortable } from "@dnd-kit/sortable";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CSS } from "@dnd-kit/utilities";
 interface Props {
   task: Task;
@@ -29,14 +29,7 @@ const TaskCard = (props: Props) => {
     },
     disabled: editMode,
   });
-  useEffect(() => {
-    const checkDeadLine = () => {
-      const taskDeadLine = new Date(task.deadline).getTime();
-      const currentTime = new Date().getTime();
-      if (currentTime > taskDeadLine) task.overdue = true;
-    };
-    checkDeadLine();
-  }, [handleDeadLine]);
+
   const toggleEditMode = () => {
     setEditMode((prev) => !prev);
     setMouseIsOver(false);
@@ -106,18 +99,13 @@ const TaskCard = (props: Props) => {
       {task.deadline !== "" ? (
         <div className="flex justify-between px-2 items-center mt-2 w-full">
           <span>ددلاین مشخص شده:</span>
-          {task.overdue ? (
-            <span className="hover:cursor-pointer  bg-green-500 transition">
-              {task.deadline}
-            </span>
-          ) : (
-            <span
-              onClick={() => handleDeadLine(task.id, "")}
-              className="hover:cursor-pointer hover:text-rose-500 transition"
-            >
-              {task.deadline}
-            </span>
-          )}
+
+          <span
+            onClick={() => handleDeadLine(task.id, "")}
+            className="hover:cursor-pointer hover:text-rose-500 transition"
+          >
+            {task.deadline}
+          </span>
         </div>
       ) : (
         <div className="flex justify-between w-full items-center mt-2">
