@@ -11,7 +11,7 @@ RIRA WALL is a task management application that allows you to easily organize yo
 
 ## Live Version
 
-To view the live version of the application, please visit the link below:
+To view the live version of the application, please visit the link below (with VPN): 
 
 [Live Version of RIRA WALL](https://riratask.vercel.app)
 
