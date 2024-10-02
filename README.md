@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## RIRA WALL
 
-## Getting Started
+RIRA WALL is a task management application that allows you to easily organize your tasks. The app includes the following key features:
 
-First, run the development server:
+- Add and Remove Columns: Easily create new columns or delete existing ones.
+- Add Tasks to Columns: Add new tasks to any column.
+- Edit Task Content: Edit the content of any task with ease.
+- Set Deadlines for Tasks: Specify deadlines for each task to enhance your scheduling.
+- Move Tasks: Drag and drop tasks between columns or within a column.
+- Delete Tasks: Simply remove unnecessary tasks.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Version
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To view the live version of the application, please visit the link below:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[Live Version of RIRA WALL](https://riratask.vercel.app)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## GitHub Repository
 
-## Learn More
+For access to the source code and more information, please refer to our GitHub repository:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[GitHub Repository of RIRA WALL](https://github.com/mehdiostad/riratask)
